@@ -1,21 +1,24 @@
 package ua.com.reactive.lab_karpovych.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.math.BigDecimal;
-
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table("drinks")
-public class Drink {
+@ToString
+@Table(name = "roles_has_users")
+public class RolesHasUsers {
+
     @Id
     private Long id;
-    private String name;
-    private BigDecimal price;
-    private int portions;
+
+    private Long role_id;
+    private Long user_id;
 }
